@@ -35,7 +35,7 @@ void buttonMachine() {
 		break;
 
 	case Reset:
-		if((PINA & 0x03)==0x03) {
+		if((~PINA & 0x03)==0x03) {
 			SM=Reset;
 		}
 		else{
