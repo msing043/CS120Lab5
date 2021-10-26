@@ -20,16 +20,16 @@ void buttonMachine() {
 		break;
 			
 	case Initializer:
-		if((PINA&0x03)==0x03) {
+		if((~PINA&0x03)==0x03) {
                         SM=Reset;
                 }
-		else if((PINA&0x01)==0x01) {
+		else if((~PINA&0x01)==0x01) {
 			SM=Increment;
 		}
-		else if((PINA&0x02)==0x02) {
+		else if((~PINA&0x02)==0x02) {
                         SM=Decrement;
                 }
-		else if(PINA==0){
+		else if(~PINA==0){
 			SM=Standby;
 		}
 		break;
@@ -44,7 +44,7 @@ void buttonMachine() {
 		break;
 		
 	case Addition:
-		if((PINA & 0x01)==0x01) {
+		if((~PINA & 0x01)==0x01) {
 	        	SM=Addition;
                 }
                 else{
@@ -57,7 +57,7 @@ void buttonMachine() {
 		break;
 			
 	case Subtraction:
-                if((PINA & 0x02)==0x02) {
+                if((~PINA & 0x02)==0x02) {
     	            SM=Subtraction;
                 }
                 else{
